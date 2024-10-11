@@ -1,0 +1,21 @@
+using UnityEngine;
+using Unity.VisualScripting;
+
+public class EnemyController : MonoBehaviour
+{
+    public GameObject player;
+
+    private void Start()
+    {
+    }
+
+    private void FixedUpdate()
+    {
+    }
+
+    void Update()
+    {
+        var declarations = gameObject.GetComponent<Variables>().declarations;
+        declarations["DistanceToPlayer"] = (transform.position - player.transform.position).magnitude;
+    }
+}
